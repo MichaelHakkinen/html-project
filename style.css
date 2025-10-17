@@ -159,6 +159,21 @@ header {
   color: #00bcd4;
 }
 
+.navbar a,
+.navbar-nav a,
+.navbar-nav .nav-link {
+  display: inline-block;
+  /* width: 100%; */
+}
+
+.navbar a:hover,
+.navbar-nav a:hover,
+.navbar-nav .nav-link:hover {
+  color: gray;
+}
+
+
+
 /* Hide social icons on small screens */
 @media (max-width: 991px) {
   .navbar-social {
@@ -762,6 +777,53 @@ header {
   transition: transform 0.3s ease;
 }
 
+.shipping-partner {
+  padding: 80px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.shipping-partner h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.shipping-partner .subtitle {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Horizontal scroll area */
+.partners-scroll {
+  overflow-x: visible; /* allow logos to grow outside container */
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* Track with all logos */
+.partners-track {
+  display: flex;
+  gap: 40px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.partner img {
+  width: 120px;
+  height: auto;
+  transition: transform 0.3s ease;
+  transform-origin: center; /* enlarge from center */
+}
+
+.partner img:hover {
+  transform: scale(1.5); /* enlarged size */
+  z-index: 10; /* pop above others */
+  position: relative; 
+}
+
+
+
 /* --- Shape Section --- */
 .shape-section {
   padding: 60px 5%;
@@ -1141,3 +1203,73 @@ hr {
   }
 }
 
+.shipping-partners {
+  text-align: center;
+  padding: 60px 0;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+.shipping-partners h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.partner-carousel {
+  overflow-x: auto;       /* allow scrolling */
+  overflow-y: hidden;
+  width: 80%;             /* container width */
+  margin: 0 auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+}
+
+.partner-track {
+  display: flex;
+  gap: 30px;
+  animation: scrollInfinite 30s linear infinite;
+}
+
+.partner-slide {
+  flex: 0 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.partner-slide img {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease;
+  cursor: pointer;
+  transform-origin: center;
+}
+
+.partner-slide img:hover {
+  transform: scale(1.25);  /* enlarged size */
+  z-index: 10;
+  position: relative;
+}
+
+/* Pause animation on hover */
+.partner-carousel:hover .partner-track {
+  animation-play-state: paused;
+}
+
+/* Duplicate logos for smooth looping */
+.partner-track {
+  display: flex;
+}
+
+/* Infinite scroll keyframes */
+@keyframes scrollInfinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.partners-description {
+  font-size: 1rem;
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  line-height: 1.6;
+  text-align: center;
+}
