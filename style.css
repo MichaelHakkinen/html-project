@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     width: 100%;
-    height: 70vh; /* full screen */
+    height: 63vh; /* full screen */
     overflow: hidden;
     z-index: 1;
 }
@@ -83,7 +83,6 @@
 
 body {
     height: 100vh;
-    background-color: skyblue;
     background-size: cover;
     background-position: center;
 }
@@ -111,7 +110,7 @@ header {
 
 .navbar {
     width: 100%;
-    height: 60px;
+    height: 80px;
     /* max-width: 1200px; */
     margin: 0 auto;
     display: flex;
@@ -121,7 +120,7 @@ header {
 }
 
 .navbar .logo {
-    height: 40px;
+    height: 80px;
     width: auto;
     padding-left: 2rem;
 }
@@ -254,12 +253,45 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
     align-items: center;
+    padding: 30px;
+}
+
+.about-statement {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #000000; /* elegant gold */
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-align: left; /* match your heading alignment */
 }
 
 .about-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #111;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #bfa145; /* elegant gold tone */
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.about-text h2::before,
+.about-text h2::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(to right, #bfa145, #e2c675);
+    border-radius: 2px;
+}
+
+.about-text h2::before {
+    left: calc(50% - 200px);
+}
+
+.about-text h2::after {
+    left: calc(50% + 160px);
 }
 
 .about-text p {
@@ -268,31 +300,40 @@ header {
 }
 
 .about-text .brand {
-    color: orange;
+    color: rgb(253, 175, 29);
     font-weight: bold;
 }
 
 .about-btn {
     display: inline-block;
     margin-top: 1rem;
-    padding: 0.7rem 1.5rem;
-    background: orange;
-    color: #fff;
-    border-radius: 25px;
-    font-weight: bold;
-    transition: 0.3s;
+    padding: 0.8rem 1.8rem;
+    background: #000; /* black background */
+    color: #fff; /* white text */
+    border: 2px solid #000; /* black border */
+    border-radius: 4px; /* slight roundness */
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .about-btn:hover {
-    background: #e69500;
-    transform: scale(1.05);
+    background: #fff; /* white background */
+    color: #000; /* black text */
+    border: 2px solid #000; /* keep border visible */
+    transform: translateY(-2px); /* subtle lift effect */
 }
 
 /* Image styling */
 .about-img img {
-    width: 100%;
+    width: 60%; /* smaller size */
+    max-width: 400px; /* optional: limit the largest size */
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto; /* centers the image horizontally */
 }
 
 /* Responsive */
@@ -314,10 +355,21 @@ header {
 }
 
 .products h2 {
-  font-size: 2rem;
+  text-align: center;
+  font-size: 2.8rem;
   margin-bottom: 2rem;
   color: #111;
 }
+
+.products h2 b {
+  font-weight: 800; /* makes "Discover" extra bold */
+}
+
+.products h2 .color-product {
+  color: rgb(253, 175, 29);
+  font-weight: 400; /* makes "Our Products" normal weight */
+}
+
 
 .product-slider {
   position: relative;
@@ -325,10 +377,14 @@ header {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  border: 2px solid orange;   /* Rectangle frame */
-  border-radius: 12px;
+  border: 2px solid rgb(124, 124, 124);   /* Rectangle frame */
+  border-radius: 6px;
   padding: 1rem;
   background: transparent;
+}
+
+.color-product {
+  color: rgb(253, 175, 29);
 }
 
 .product-container {
@@ -453,6 +509,7 @@ header {
   background: orange;
 }
 
+/* -----GALLERY----- */
 .gallery {
   padding: 4rem 2rem;
   background: #fff;
